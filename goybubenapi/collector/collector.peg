@@ -1,0 +1,8 @@
+package collector
+
+type Collector Peg {
+}
+
+words <- (word / anychar)*
+word <- [ԱԲԳԴԵԶԷԸԹԺԻԼԽԾԿՀՁՂՃՄՅՆՇՈՉՊՋՌՍՎՏՐՑՒՓՔՕՖՈաբգդեզէըթժիլխծկհձղճմյնշոչպջռսվտրցւփքօֆոև]+
+anychar <- .

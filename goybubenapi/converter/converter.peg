@@ -1,0 +1,138 @@
+package converter
+
+type Converter Peg {
+}
+
+letters <- letter*
+
+letter
+    <- alphabet
+    /  nonAlphabet
+    /  asis
+
+alphabet
+    <- largeA
+    /  largeB
+    /  largeC
+    /  largeD
+    /  largeE
+    /  largeF
+    /  largeG
+    /  largeH
+    /  largeI
+    /  largeJ
+    /  largeK
+    /  largeL
+    /  largeM
+    /  largeN
+    /  largeO
+    /  largeP
+    /  largeQ
+    /  largeR
+    /  largeS
+    /  largeT
+    /  largeU
+    /  largeV
+    /  largeW
+    /  largeX
+    /  largeY
+    /  largeZ
+    /  smallA
+    /  smallB
+    /  smallC
+    /  smallD
+    /  smallE
+    /  smallF
+    /  smallG
+    /  smallH
+    /  smallI
+    /  smallJ
+    /  smallK
+    /  smallL
+    /  smallM
+    /  smallN
+    /  smallO
+    /  smallP
+    /  smallQ
+    /  smallR
+    /  smallS
+    /  smallT
+    /  smallU
+    /  smallV
+    /  smallW
+    /  smallX
+    /  smallY
+    /  smallZ
+
+largeA <- 'A'
+largeB <- 'B'
+largeC <- 'C' [h']?
+largeD <- 'D' 'z'?
+largeE <- 'E' "'"?
+largeF <- 'F'
+largeG <- 'G' 'h'?
+largeH <- 'H'
+largeI <- 'I'
+largeJ <- 'J'
+largeK <- 'K'
+largeL <- 'L'
+largeM <- 'M'
+largeN <- 'N'
+largeO <- 'O'
+largeP <- 'P' "'"?
+largeQ <- 'Q'
+largeR <- 'R' 'r'?
+largeS <- 'S' 'h'?
+largeT <- 'T' [w']?
+largeU <- 'U'
+largeV <- 'V' 'o'?
+largeW <- 'W'
+largeX <- 'X'
+largeY <- 'Y' "'"?
+largeZ <- 'Z' 'h'?
+
+smallA <- 'a'
+smallB <- 'b'
+smallC <- 'c' [h']?
+smallD <- 'd' 'z'?
+smallE <- 'e' [v']?
+smallF <- 'f'
+smallG <- 'g' 'h'?
+smallH <- 'h'
+smallI <- 'i'
+smallJ <- 'j'
+smallK <- 'k'
+smallL <- 'l'
+smallM <- 'm'
+smallN <- 'n'
+smallO <- 'o'
+smallP <- 'p' "'"?
+smallQ <- 'q'
+smallR <- 'r' 'r'?
+smallS <- 's' 'h'?
+smallT <- 't' [w']?
+smallU <- 'u'
+smallV <- 'v' 'o'?
+smallW <- 'w'
+smallX <- 'x'
+smallY <- 'y' "'"?
+smallZ <- 'z' 'h'?
+
+nonAlphabet
+    <- dollar
+    /  backQuote
+    /  colon
+    /  leftGuillemet
+    /  rightGuillemet
+    /  question
+    /  exclamation
+
+dollar <- '$'
+backQuote <- '`'
+colon <- ':'
+leftGuillemet <- '<<'
+rightGuillemet <- '>>'
+question <- '?'
+exclamation <- '!' '~'?
+
+asis <- .
